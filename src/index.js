@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import "./index.css";
 import Header from "./Header.js";
 import Content from "./Content.js";
+
 function createStore(reducer) {
   let state = null;
   const listeners = [];
@@ -16,6 +17,7 @@ function createStore(reducer) {
   dispatch({});
   return { getState, dispatch, subScribe };
 }
+
 const themeReducer = (state, action) => {
   if (!state) {
     return {
@@ -33,6 +35,7 @@ const themeReducer = (state, action) => {
   }
 };
 const store = createStore(themeReducer);
+
 class Index extends Component {
   static childContextTypes = {
     store: PropTypes.object,

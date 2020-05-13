@@ -11,7 +11,9 @@ class Header extends Component {
     };
   }
   componentWillMount() {
+    const { store } = this.context;
     this._updateThemeColor();
+    store.subScribe(() => this._updateThemeColor());
   }
   _updateThemeColor() {
     const { store } = this.context;
