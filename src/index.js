@@ -28,13 +28,18 @@ const themeReducer = (action) => {
         ...state,
         themeColor: action.themeColor,
       };
-      break;
     default:
       return state;
   }
 };
 const store = createStore(themeReducer);
 class Index extends Component {
+  static childContextTypes = {
+    store: PropTypes.object,
+  };
+  getChildContext() {
+    return { store };
+  }
   render() {
     return (
       <div>
