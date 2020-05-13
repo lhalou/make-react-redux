@@ -16,7 +16,7 @@ function createStore(reducer) {
   dispatch({});
   return { getState, dispatch, subScribe };
 }
-const themeReducer = (action) => {
+const themeReducer = (state, action) => {
   if (!state) {
     return {
       themeColor: "red",
